@@ -1,5 +1,5 @@
 def containsDuplicate(self,nums):
-    return not len(set(nums)) ==len(nums)
+    return not len(set(nums)) == len(nums)
 ###
 testCases=[
     [1,2,3,1],
