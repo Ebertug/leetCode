@@ -6,20 +6,20 @@ def twoSum(nums,target=2):
                 return [x+1,i+1]
         x+=1
 
-def deleteDuplicate(nums,itemCounter=2):
+def deleteDuplicate(nums,itemCounter=0):
     
-    for x in range(0,len(nums)-3):
+    for x in range(0,len(nums)-1):
         if nums[x] == nums[x+1]:
             itemCounter += 1
         else:
             itemCounter = 0
             
         if itemCounter > 2:
-            nums.pop(x+1)
+            nums.pop(x)
         
     print(twoSum(nums))
 ###
-nums = [1,1,1,1,2,3,4,5]
+nums = [-1,-1,-1,-1,1,1]
 ###
 deleteDuplicate(nums)
 
