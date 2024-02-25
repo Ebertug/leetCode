@@ -1,6 +1,6 @@
 def twoSum(nums,target=10):
     x=0
-    while x<len(nums):
+    for x in range(len(nums)):
         for i in range(x+1,len(nums)):
             if (nums[x]+nums[i] == target):
                 return [x,i]
