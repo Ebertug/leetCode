@@ -1,25 +1,22 @@
-def twoSum(nums,target=2):
-    x=0
-    for x in range(len(nums)):
-        for i in range(x+1,len(nums)):
-            if (nums[x]+nums[i] == target):
-                return [x+1,i+1]
-        x+=1
-
-def deleteDuplicate(nums,itemCounter=0):
-    
-    for x in range(0,len(nums)-1):
-        if nums[x] == nums[x+1]:
-            itemCounter += 1
+def twoSum2(numbers,target = 9):
+    l = 0
+    r = len(numbers)-1
+    while r>l:
+        if (numbers[l]+numbers[r]>target):
+            r -= 1
+        elif (numbers[l]+numbers[r]<target):
+            l += 1
         else:
-            itemCounter = 0
-            
-        if itemCounter > 2:
-            nums.pop(x)
-        
-    print(twoSum(nums))
-###
-nums = [-1,-1,-1,-1,1,1]
-###
-deleteDuplicate(nums)
+            return [l+1,r+1]
+
+testCases = [
+    [0,1,2,4,5,6],
+    [-1,-1,-1,-1,4,5],
+    [0,1,2,2,3,5,5,6]
+    
+]    
+
+for nums in testCases:
+    print(twoSum2(nums))
+
 
